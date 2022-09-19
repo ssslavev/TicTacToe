@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic-Tac-Toe</title>
+</head>
+
+<body>
+  <div>
+    <h2 #playerX>PlayerXScore: {{playerXScore}}</h2>
+    <h2 #playerO>PlayerOScore: {{playerOScore}}</h2>
+  </div>
+  <div class="title">
+    <div *ngIf="!playerWin && !isGameEqual">
+      Player {{currentPlayer}}`s turn
+    </div>
+    <div *ngIf="playerWin">
+      Player {{currentPlayer}} won!
+    </div>
+    <div *ngIf="isGameEqual && !playerWin">
+      The game is equal
+    </div>
+
+  </div>
+  <section [ngStyle]="{'pointer-events': playerWin ? 'none' : 'inherit'}" class="container" #container>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </section>
+  <div *ngIf="playerWin || isGameEqual" class="reset">
+    <button id="reset" (click)="reset()">Reset</button>
+  </div>
+</body>
+
+</html>
