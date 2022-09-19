@@ -20,8 +20,8 @@ export class AppComponent implements OnInit, AfterViewInit {
   board: any = ['', '', '', '', '', '', '', '',];
   currentPlayer = 'X';
   playerWin: boolean = false;
-  playerXColor = Math.floor(Math.random() * 10000).toString(16);
-  playerOColor = Math.floor(Math.random() * 10000).toString(16);
+  playerXColor = Math.floor(Math.random() * 16777215).toString(16);
+  playerOColor = Math.floor(Math.random() * 16777215).toString(16);
   isGameEqual: boolean = false;
   playerXScore: number = 0;
   playerOScore: number = 0;
@@ -99,8 +99,8 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.boxes.forEach(tile => {
       tile.innerText = '';
     });
-    this.playerXColor = Math.floor(Math.random() * 10000).toString(16);
-    this.playerOColor = Math.floor(Math.random() * 10000).toString(16);
+    this.playerXColor = Math.floor(Math.random() * 16777215).toString(16);
+    this.playerOColor = Math.floor(Math.random() * 16777215).toString(16);
     this.playerX.nativeElement.style.color = '#' + this.playerXColor;
     this.playerO.nativeElement.style.color = '#' + this.playerOColor;
   }
